@@ -1,0 +1,41 @@
+.anchor {
+    -fx-background-image: url("../images/background.jpeg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover;
+    -fx-width:100%;
+}
+.barchart {
+    -fx-background-color: rgba(0,0,0,0.3);
+    -fx-background-radius: 10px;
+    -fx-padding: 20px;
+}
+.chart-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial";
+    -fx-text-size: 20px;
+}
+.chart-axis {
+    -fx-text-fill: #ffffff;
+    -fx-tick-label-fill: #ffffff;
+    -fx-padding: 0px 0px 20px 0px;
+    -fx-text-transform: uppercase;
+}
+.chart-numbers {
+    -fx-text-fill: #e5ff00;
+    -fx-tick-label-fill: white;
+    -fx-text-size : 14px;
+    -fx-font-weight: bold;
+}
+.chart-plot-background {
+    -fx-background-color: rgba(255,255,255,0.5); /* Cambia el color de fondo detrás de las barras a naranja */
+}
+
+.chart-bar {
+-fx-background-color: linear-gradient(#880016, #fca215, #ffe50f);
+-fx-background-radius:3px 3px 0px 0px;/* Yellow Bar */
+}
+.chart-bar:hover {
+    -fx-background-color: #880016;
+}
