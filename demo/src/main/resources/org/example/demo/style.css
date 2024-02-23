@@ -77,3 +77,11 @@
         -fx-background-color: rgba(11,33,64,0.6);
 
     }
+ .chart-pie-label {
+        -fx-font-family: "Arial"; /* Change the font family */
+        -fx-font-weight: bold; /* Make the font bold */
+        -fx-font-size: 16px; /* Change the font size */
+        -fx-fill: #ffcc00; /* Change the color of the labels to red */
+        -fx-background-color: black;
+        -fx-background-radius:20px;/* Yellow Bar */
+    }

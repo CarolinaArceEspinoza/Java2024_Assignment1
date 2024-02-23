@@ -11,7 +11,6 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -35,7 +34,7 @@ public class PowerViewController implements Initializable {
     private void loadChartDataFromDatabase() {
         // Conectar a la base de datos y obtener datos
         try (Connection connection = new DatabaseConnector().connect()) {
-            String query = "SELECT power, COUNT(*) AS count FROM characters GROUP BY power ORDER BY count DESC";
+            String query = "SELECT power, COUNT(*) AS count FROM CHARACTERS GROUP BY power ORDER BY count DESC";
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 

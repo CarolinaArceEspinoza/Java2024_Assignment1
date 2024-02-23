@@ -103,7 +103,7 @@ public class Characters {
 
         try {
             Connection connection = dbConnector.connect();
-            String SQL = "SELECT * FROM Characters";
+            String SQL = "SELECT * FROM CHARACTERS";
             Statement stmt = connection.createStatement();
             ResultSet resul = stmt.executeQuery(SQL);
 

@@ -30,7 +30,7 @@ public class KindViewController implements Initializable {
     private void loadChartDataFromDatabase() {
         // Conectar a la base de datos y obtener datos
         try (Connection connection = new DatabaseConnector().connect()) {
-            String query = "SELECT kind, COUNT(*) AS count FROM characters GROUP BY kind ORDER BY count DESC";
+            String query = "SELECT kind, COUNT(*) AS count FROM CHARACTERS GROUP BY kind ORDER BY count DESC";
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 

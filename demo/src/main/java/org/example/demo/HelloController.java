@@ -48,10 +48,6 @@ public class HelloController {
     @FXML
     private TableColumn<Characters, String> speciesColumn;
 
-    @FXML
-    ObservableList<Characters> items;
-
-    private static Connection conexion = null;
 
     // Initialize method to set up the table columns
     @FXML
