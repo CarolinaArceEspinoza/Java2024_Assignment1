@@ -1,19 +1,27 @@
 package org.example.demo;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PowerViewController implements Initializable {
     @FXML
@@ -49,4 +57,32 @@ public class PowerViewController implements Initializable {
             e.printStackTrace();
         }
     }
+    public void tableViewButton(ActionEvent actionEvent) throws IOException {
+        // Cargar el archivo FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("tableView.fxml"));
+        Parent root = loader.load();
+
+        // Crear una nueva escena
+        Scene scene = new Scene(root);
+
+        // Obtener el Stage actual y establecer la nueva escena
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setFullScreen(true);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void powerViewButton(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("powerView.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Most Popular Marvel Characters");
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
+
+
+
+
 }

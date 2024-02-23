@@ -1,12 +1,19 @@
 package org.example.demo;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 
 public class HelloController {
@@ -65,12 +72,34 @@ public class HelloController {
 
     }
 
-        @FXML
-    private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void tableViewButton(ActionEvent actionEvent) throws IOException {
+        // Cargar el archivo FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("tableView.fxml"));
+        Parent root = loader.load();
+
+        // Crear una nueva escena
+        Scene scene = new Scene(root);
+
+        // Obtener el Stage actual y establecer la nueva escena
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setFullScreen(true);
+        stage.setScene(scene);
+        stage.show();
     }
+
+    public void powerViewButton(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("powerView.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Most Popular Marvel Characters");
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.getIcons().add(new Image("images/icon.png"));
+        stage.show();
+    }
+
+
+
 
 }
