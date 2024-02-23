@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="container" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HelloController">
+
+<VBox fx:id="tableViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HelloController">
    <Label styleClass="chart-title" text="THE MOST POPULAR CHARACTERS IN MCU" textFill="WHITE">
       <font>
          <Font name="Arial Bold" size="23.0" />
@@ -24,8 +25,9 @@
    </Label>
     <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@style.css">
         <buttons>
-            <Button disable="true" onAction="#tableViewButton" text="Check the list" />
+            <Button disable="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#tableViewButton" text="Check the list" textAlignment="CENTER"  />
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#powerViewButton" text="Check the powers" textAlignment="CENTER" />
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#kindViewButton" text="Check the kind" textAlignment="CENTER" />
         </buttons>
       <VBox.margin>
          <Insets left="213.0" right="187.0" />

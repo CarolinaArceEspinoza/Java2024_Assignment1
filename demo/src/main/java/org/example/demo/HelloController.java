@@ -76,14 +76,8 @@ public class HelloController {
     public void tableViewButton(ActionEvent actionEvent) throws IOException {
         // Cargar el archivo FXML
         FXMLLoader loader = new FXMLLoader(getClass().getResource("tableView.fxml"));
-        Parent root = loader.load();
-
-        // Crear una nueva escena
-        Scene scene = new Scene(root);
-
-        // Obtener el Stage actual y establecer la nueva escena
+        Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setFullScreen(true);
         stage.setScene(scene);
         stage.show();
     }
@@ -92,10 +86,15 @@ public class HelloController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("powerView.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Most Popular Marvel Characters");
         stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.getIcons().add(new Image("images/icon.png"));
+        stage.show();
+    }
+
+    public void kindViewButton(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("kindView.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
         stage.show();
     }
 

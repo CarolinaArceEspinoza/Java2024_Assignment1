@@ -17,7 +17,6 @@ public class HelloApplication extends Application {
         Image image = new Image("file:src/main/resources/org/example/images/icon.png");
         stage.getIcons().add(image);
         stage.setTitle("Most Popular Marvel Characters");
-        stage.setFullScreen(true);
         stage.setScene(scene);
         stage.show();
     }

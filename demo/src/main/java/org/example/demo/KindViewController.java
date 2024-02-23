@@ -7,11 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.PieChart;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -20,40 +17,34 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class PowerViewController implements Initializable {
-    @FXML
-    private BarChart<String, Number> barChart;
-
-    @FXML
-    private CategoryAxis xAxis;
+public class KindViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadChartDataFromDatabase();
     }
 
+    @FXML
+    private PieChart pieChart;
+
     private void loadChartDataFromDatabase() {
         // Conectar a la base de datos y obtener datos
         try (Connection connection = new DatabaseConnector().connect()) {
-            String query = "SELECT power, COUNT(*) AS count FROM characters GROUP BY power ORDER BY count DESC";
+            String query = "SELECT kind, COUNT(*) AS count FROM characters GROUP BY kind ORDER BY count DESC";
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
-            XYChart.Series<String, Number> series = new XYChart.Series<>();
-            series.setName("Prevalence of powers");
-
             while (resultSet.next()) {
-                String power = resultSet.getString("power");
+                String kind = resultSet.getString("kind");
                 int count = resultSet.getInt("count");
-                series.getData().add(new XYChart.Data<>(power, count));
+                pieChart.getData().add(new PieChart.Data(kind, count));
             }
-
-            barChart.getData().add(series);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     public void tableViewButton(ActionEvent actionEvent) throws IOException {
         // Cargar el archivo FXML
         FXMLLoader loader = new FXMLLoader(getClass().getResource("tableView.fxml"));
@@ -78,5 +69,4 @@ public class PowerViewController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
 }
