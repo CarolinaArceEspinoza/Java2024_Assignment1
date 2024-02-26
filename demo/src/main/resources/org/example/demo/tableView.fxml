@@ -10,23 +10,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox fx:id="tableViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HelloController">
    <Label styleClass="chart-title" text="THE MOST POPULAR CHARACTERS IN MCU" textFill="WHITE">
-      <font>
-         <Font name="Arial Bold" size="23.0" />
-      </font>
-      <effect>
+       <font>
+           <Font name="Arial Bold" size="20.0" />
+       </font>
+       <effect>
          <Bloom />
       </effect>
       <VBox.margin>
-         <Insets left="29.0" top="29.0" />
+         <Insets left="29.0" top="15.0" />
       </VBox.margin>
    </Label>
-    <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@style.css">
+    <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@style.css">
         <buttons>
-            <Button disable="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#tableViewButton" text="Check the list" textAlignment="CENTER"  />
-            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#powerViewButton" text="Check the powers" textAlignment="CENTER" />
+            <Button contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#tableViewButton" text="Check the list" textAlignment="CENTER" />
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#powerViewButton" text="Check the powers" textAlignment="CENTER" />
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#kindViewButton" text="Check the kind" textAlignment="CENTER" />
         </buttons>
       <VBox.margin>
@@ -39,9 +38,9 @@
 
    <TableView fx:id="containerTable" maxHeight="1.7976931348623157E308" prefHeight="500.0" prefWidth="900.0" styleClass="barchart" stylesheets="@style.css">
      <columns>
-       <TableColumn fx:id="idColumn" prefWidth="29.807771682739258" text="ID" visible="false" />
-         <TableColumn fx:id="rankingColumn" prefWidth="29.807771682739258" text="#" />
-       <TableColumn fx:id="nameColumn" prefWidth="175.5" styleClass="nameStyle" text="NAME" />
+         <TableColumn fx:id="idColumn" prefWidth="29.807771682739258" text="ID" visible="false" />
+         <TableColumn fx:id="rankingColumn" prefWidth="35" text="#" />
+         <TableColumn fx:id="nameColumn" prefWidth="170" styleClass="nameStyle" text="NAME" />
          <TableColumn fx:id="kindColumn" prefWidth="75.5" text="KIND" />
          <TableColumn fx:id="movieColumn" prefWidth="203.0" text="FIRST MOVIE APPEARANCE" />
          <TableColumn fx:id="powerColumn" prefWidth="140.0" text="MAIN POWER" />

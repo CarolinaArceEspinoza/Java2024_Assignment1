@@ -1,3 +1,4 @@
+/* GENERAL CONTENT AND BUTTON BAR */
 .anchor {
     -fx-background-image: url("../images/background.jpeg");
     -fx-background-repeat: no-repeat;
@@ -5,17 +6,113 @@
     -fx-background-size: cover;
     -fx-width:100%;
 }
+.buttonbar {
+    -fx-background-color: rgba(255,255,255,0.7);
+    -fx-background-radius:20px;
+    -fx-text-alignment: center;
+}
+.button {
+    -fx-background-color:#c3c4c4,
+        linear-gradient(#d6d6d6 50%, white 100%),
+        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+
+/* TABLE VIEW STYLES */
+.table-view {
+    -fx-background-color: rgba(0,0,0,0.5);
+}
+.table-view .filler {
+    -fx-background-color: #F7F7F7;
+    -fx-size: 35px;
+    -fx-border-color: -fx-box-border;
+    -fx-border-insets: -1 0 0 -1;
+    -fx-padding: 0 5 0 0;
+}
+.table-row-cell {
+    -fx-background-color: rgba(255,255,255,0.75);
+    -fx-background-insets: 0, 0 0 1 0;
+}
+.table-row-cell:odd {
+    -fx-background-color: rgba(255,255,255,0.85);
+}
+.table-view:focused .table-row-cell:focused,
+.table-view:focused .table-row-cell:focused:odd {
+    -fx-background-color: -fx-box-border, #F9F9F9;
+    -fx-background-insets: 0, 1, 2;
+}
+.table-cell {
+    -fx-padding: 0.5em;
+    -fx-border-color: transparent -fx-box-border transparent transparent;
+    -fx-font: 13px "Arial";
+    -fx-text-fill: #25284a;
+}
+.table-view .column-header {
+    -fx-background-color: linear-gradient(#880016, #1c2252);
+    -fx-font-family: "Arial";
+}
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+.scroll-bar {
+-fx-background-color: rgba(0,0,0,0.6);
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+    -fx-background-insets: 0,1,1;
+}
+.scroll-bar:vertical .track-background,
+.scroll-bar:horizontal .track-background {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 20px;
+}
+.scroll-bar:vertical .thumb {
+    -fx-background-color:#880016;
+    -fx-background-insets: 1;
+    -fx-background-radius: 10px;
+}
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #d11002;
+}
+
+.scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .barchart {
     -fx-background-color: rgba(0,0,0,0.4);
     -fx-background-radius: 10px;
     -fx-padding: 20px;
 }
-.chart-title {
-    -fx-text-fill: #ffffff;
-    -fx-font-weight: bold;
-    -fx-font-family: "Arial";
-    -fx-text-size: 20px;
-}
+
 .chart-axis {
     -fx-text-fill: #ffffff;
     -fx-tick-label-fill: #ffffff;
@@ -31,7 +128,7 @@
     -fx-font-weight: bold;
 }
 .chart-plot-background {
-    -fx-background-color: rgba(255,248,224,0.8); /* Cambia el color de fondo detrás de las barras a naranja */
+    -fx-background-color: rgba(255,255,255,0.8); /* Cambia el color de fondo detrás de las barras a naranja */
 }
 /* Estilo para las líneas de la gráfica */
 .chart-vertical-grid-lines {
@@ -45,7 +142,11 @@
      -fx-stroke-dash-array: none;
      -fx-stroke-width: 1px; /* Ajusta el grosor de las líneas */
 }
-
+.radioBackground {
+-fx-background-color: rgba(0,0,0,0.5);
+-fx-background-radius:10px;
+-fx-height: 40px;
+}
 .chart-bar {
 -fx-background-color: linear-gradient(#880016, #1c2252);
 -fx-background-radius:3px 3px 0px 0px;/* Yellow Bar */
@@ -53,30 +154,15 @@
 .chart-bar:hover {
     -fx-background-color: #880016;
 }
-.buttonbar {
-    -fx-background-color: rgba(255,255,255,0.5);
-    -fx-background-radius:10px;
-    -fx-text-alignment: center;
-    }
-    /* Cambiar el color de fondo de la tabla */
-    .table-view {
-        -fx-background-color: rgba(0,0,0,0.4);
-    }
 
-    /* Cambiar el color de fondo de las celdas */
-    .table-row-cell {
-        -fx-background-color: rgba(255,248,224,0.8);
-    }
+
 .nameStyle {
         -fx-font-family: "Arial";
         -fx-font-weight: bold;
         -fx-letter-spacing:1px;
         }
     /* Cambiar el color de fondo de las celdas seleccionadas */
-    .table-row-cell:selected {
-        -fx-background-color: rgba(11,33,64,0.6);
 
-    }
  .chart-pie-label {
         -fx-font-family: "Arial"; /* Change the font family */
         -fx-font-weight: bold; /* Make the font bold */
@@ -85,3 +171,6 @@
         -fx-background-color: black;
         -fx-background-radius:20px;/* Yellow Bar */
     }
+
+
+

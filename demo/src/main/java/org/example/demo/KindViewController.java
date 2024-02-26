@@ -8,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
@@ -19,25 +21,21 @@ import java.util.ResourceBundle;
 
 public class KindViewController implements Initializable {
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        loadChartDataFromDatabase();
-    }
-
     @FXML
     private PieChart pieChart;
 
-    private void loadChartDataFromDatabase() {
-        // Conectar a la base de datos y obtener datos
+    private void loadChartDataFromDatabase(String dataSelector) {
+        pieChart.getData().clear(); // Limpiar los datos actuales del gráfico
+
         try (Connection connection = new DatabaseConnector().connect()) {
-            String query = "SELECT kind, COUNT(*) AS count FROM CHARACTERS GROUP BY kind ORDER BY count DESC";
+            String query = "SELECT " + dataSelector + ", COUNT(*) AS count FROM CHARACTERS GROUP BY " + dataSelector + " ORDER BY count DESC";
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                String kind = resultSet.getString("kind");
+                String data = resultSet.getString(dataSelector);
                 int count = resultSet.getInt("count");
-                pieChart.getData().add(new PieChart.Data(kind, count));
+                pieChart.getData().add(new PieChart.Data(data, count));
             }
 
         } catch (SQLException e) {
@@ -69,4 +67,53 @@ public class KindViewController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+
+    @FXML
+    private RadioButton kindRadioButton;
+
+    @FXML
+    private RadioButton speciesRadioButton;
+
+    @FXML
+    private RadioButton originRadioButton;
+
+    @FXML
+    private ToggleGroup toggleGroup; // Define un grupo para los botones de radio
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        toggleGroup = new ToggleGroup(); // Inicializa el grupo
+
+        // Asigna el grupo a los botones de radio
+        kindRadioButton.setToggleGroup(toggleGroup);
+        speciesRadioButton.setToggleGroup(toggleGroup);
+        originRadioButton.setToggleGroup(toggleGroup);
+
+        // Agrega un listener para manejar los eventos de cambio de selección
+        toggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == null) {
+                // Si no hay nada seleccionado, deselecciona todos los botones
+                toggleGroup.selectToggle(oldValue); // Esto desmarca el botón anterior
+            }
+        });
+    }
+
+    @FXML
+    void handleRadioButtonAction(ActionEvent event) {
+        RadioButton selectedRadioButton = (RadioButton) event.getSource();
+        if (selectedRadioButton.isSelected()) {
+            loadChartDataFromDatabase(selectedRadioButton.getId()); // Id del botón radio
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 }
