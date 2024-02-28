@@ -8,6 +8,7 @@ import java.sql.*;
 
 public class Characters {
 
+    /* VARIABLES */
     private Integer id;
     private Integer ranking;
     private String name;
@@ -17,10 +18,11 @@ public class Characters {
     private String origin;
     private String species;
 
-
+    /* CONSTRUCTOR NO ARGUMENTS */
     public Characters() {
     }
 
+    /* CONSTRUCTOR WITH ARGUMENTS */
     public Characters(Integer id, Integer ranking, String name, String kind, String movie, String power, String origin, String species) {
         this.id = id;
         this.ranking = ranking;
@@ -32,6 +34,7 @@ public class Characters {
         this.species = species;
     }
 
+    /* SETTERS AND GETTERS */
     public Integer getId() {
         return id;
     }
@@ -96,8 +99,10 @@ public class Characters {
         this.species = species;
     }
 
+    /* DECLARATION OF THE USE OF DATABASE CONECTION */
     DatabaseConnector dbConnector = new DatabaseConnector();
 
+    /* LIST OF CONTENTS FROM DATABASE */
     public ObservableList<Characters> getCharactersFromDatabase() {
         ObservableList<Characters> personaList = FXCollections.observableArrayList();
 
@@ -120,18 +125,17 @@ public class Characters {
                 Characters character = new Characters(id, ranking, name, kind, movie, power, origin, species);
                 personaList.add(character);
             }
-
             stmt.close();
             resul.close();
             connection.close();
+
         } catch (SQLException e) {
             Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
-            alerta.setTitle("AVISO");
+            alerta.setTitle("ALERT");
             alerta.setContentText(e + "");
             alerta.showAndWait();
         }
 
         return personaList;
     }
-
 }

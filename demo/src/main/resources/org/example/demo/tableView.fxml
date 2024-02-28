@@ -10,34 +10,46 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="tableViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HelloController">
-   <Label styleClass="chart-title" text="THE MOST POPULAR CHARACTERS IN MCU" textFill="WHITE">
-       <font>
-           <Font name="Arial Bold" size="20.0" />
-       </font>
-       <effect>
-         <Bloom />
-      </effect>
-      <VBox.margin>
-         <Insets left="29.0" top="15.0" />
-      </VBox.margin>
-   </Label>
-    <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@style.css">
+<!-- VISUAL STRUCTURE -->
+<!-- END VISUAL STRUCTURE -->
+
+<VBox fx:id="tableViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.tableViewController">
+
+    <!-- HEADER -->
+
+    <!-- TITLE -->
+    <Label styleClass="app-title" text="THE MOST POPULAR CHARACTERS IN MCU" textFill="WHITE">
+        <font>
+            <Font name="Arial Bold" size="20.0" />
+        </font>
+        <effect>
+            <Bloom />
+        </effect>
+        <VBox.margin>
+            <Insets left="30.0" top="20.0" />
+        </VBox.margin>
+    </Label>
+
+    <!-- NAVIGATION BAR -->
+    <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@style.css">
         <buttons>
             <Button contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#tableViewButton" text="Check the list" textAlignment="CENTER" />
-            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#powerViewButton" text="Check the powers" textAlignment="CENTER" />
-            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#kindViewButton" text="Check the kind" textAlignment="CENTER" />
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#movieViewButton" text="Movies Data" textAlignment="CENTER" />
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#kindViewButton" text="Character Data" textAlignment="CENTER" />
         </buttons>
-      <VBox.margin>
-         <Insets left="213.0" right="187.0" />
-      </VBox.margin>
-      <padding>
-         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-      </padding>
+        <VBox.margin>
+            <Insets left="200.0" right="200.0" />
+        </VBox.margin>
+        <padding>
+            <Insets bottom="6.0" left="6.0" right="10.0" top="6.0" />
+        </padding>
     </ButtonBar>
+    <!-- END HEADER -->
 
+    <!-- TABLE STRUCTURE -->
    <TableView fx:id="containerTable" maxHeight="1.7976931348623157E308" prefHeight="500.0" prefWidth="900.0" styleClass="barchart" stylesheets="@style.css">
-     <columns>
+       <!-- FIELDS -->
+       <columns>
          <TableColumn fx:id="idColumn" prefWidth="29.807771682739258" text="ID" visible="false" />
          <TableColumn fx:id="rankingColumn" prefWidth="35" text="#" />
          <TableColumn fx:id="nameColumn" prefWidth="170" styleClass="nameStyle" text="NAME" />
@@ -47,6 +59,8 @@
          <TableColumn fx:id="originColumn" prefWidth="106.5" text="ORIGIN" />
          <TableColumn fx:id="speciesColumn" prefWidth="130.5" text="SPECIES" />
      </columns>
+
+       <!-- DESIGN -->
       <VBox.margin>
          <Insets bottom="40.0" left="50.0" right="50.0" top="50.0" />
       </VBox.margin>
@@ -54,5 +68,6 @@
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
       </columnResizePolicy>
    </TableView>
+    <!-- END TABLE STRUCTURE -->
 
 </VBox>

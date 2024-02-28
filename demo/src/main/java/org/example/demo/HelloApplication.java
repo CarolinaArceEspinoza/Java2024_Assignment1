@@ -10,10 +10,13 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
+    /* PROGRAM RUNS FROM HERE */
+    /* It includes the first page to run, and the configuration of the window/stage where the program
+       will run, title and icon */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tableView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load(),1300, 700);
         Image image = new Image("file:src/main/resources/org/example/images/icon.png");
         stage.getIcons().add(image);
         stage.setTitle("Most Popular Marvel Characters");
@@ -25,5 +28,4 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }
