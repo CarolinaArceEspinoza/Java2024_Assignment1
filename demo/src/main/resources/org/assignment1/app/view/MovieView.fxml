@@ -19,7 +19,7 @@
 <!-- VISUAL STRUCTURE -->
 <!-- END VISUAL STRUCTURE -->
 
-<VBox fx:id="powerViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.assignment1.app.controller.MovieViewController">
+<VBox fx:id="powerViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.assignment1.app.controller.MovieViewController">
     <!-- HEADER -->
 
     <!-- TITLE -->
@@ -36,7 +36,7 @@
     </Label>
 
     <!-- NAVIGATION BAR -->
-    <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@style.css">
+    <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@../css/style.css">
         <buttons>
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#tableViewButton" text="Check the list" textAlignment="CENTER" />
             <Button contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#movieViewButton" text="Movies Data" textAlignment="CENTER" />
@@ -51,7 +51,7 @@
     </ButtonBar>
 
     <!-- OPTIONS BAR -->
-    <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" styleClass="radioBackground" stylesheets="@style.css">
+    <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" styleClass="radioBackground" stylesheets="@../css/style.css">
         <columnConstraints>
             <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="83.6214599609375" />
@@ -82,9 +82,9 @@
     <!-- END HEADER -->
 
     <!-- BAR CHART STRUCTURE -->
-      <BarChart fx:id="barChart" alternativeColumnFillVisible="true" barGap="1.0" cacheShape="false" categoryGap="0.0" centerShape="false" focusTraversable="true" legendSide="RIGHT" legendVisible="false" maxHeight="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="900.0" scaleShape="false" styleClass="barchart" stylesheets="@style.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="124.0">
+      <BarChart fx:id="barChart" alternativeColumnFillVisible="true" barGap="1.0" cacheShape="false" categoryGap="0.0" centerShape="false" focusTraversable="true" legendSide="RIGHT" legendVisible="false" maxHeight="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="900.0" scaleShape="false" styleClass="barchart" stylesheets="@../css/style.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="124.0">
         <xAxis>
-          <CategoryAxis animated="false" endMargin="0.0" label="Movies Information" mouseTransparent="true" side="BOTTOM" startMargin="0.0" styleClass="chart-axis" stylesheets="@style.css" tickLabelFill="WHITE" tickLength="5.0" fx:id="xAxis">
+          <CategoryAxis animated="false" endMargin="0.0" label="Movies Information" mouseTransparent="true" side="BOTTOM" startMargin="0.0" styleClass="chart-axis" stylesheets="@../css/style.css" tickLabelFill="WHITE" tickLength="5.0" fx:id="xAxis">
                <tickLabelFont>
                   <Font name="Arial Bold" size="10.0" />
                </tickLabelFont>

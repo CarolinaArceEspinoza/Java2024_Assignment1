@@ -16,7 +16,7 @@
 <!-- VISUAL STRUCTURE -->
 <!-- END VISUAL STRUCTURE -->
 
-<VBox fx:id="kindViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.assignment1.app.controller.CharacteristicsViewController">
+<VBox fx:id="kindViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.assignment1.app.controller.CharacteristicsViewController">
     <!-- HEADER -->
 
     <!-- TITLE -->
@@ -33,7 +33,7 @@
     </Label>
 
     <!-- NAVIGATION BAR -->
-    <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@style.css">
+    <ButtonBar buttonMinWidth="100.0" layoutX="213.0" layoutY="75.0" prefHeight="40.0" prefWidth="600.0" styleClass="buttonbar" stylesheets="@../css/style.css">
         <buttons>
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#tableViewButton" text="Check the list" textAlignment="CENTER" />
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#movieViewButton" text="Movies Data" textAlignment="CENTER" />
@@ -48,7 +48,7 @@
     </ButtonBar>
 
     <!-- OPTIONS BAR -->
-   <GridPane alignment="CENTER" prefHeight="30.0" styleClass="radioBackground" stylesheets="@style.css">
+   <GridPane alignment="CENTER" prefHeight="30.0" styleClass="radioBackground" stylesheets="@../css/style.css">
      <columnConstraints>
         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -69,7 +69,7 @@
                   <Font name="Arial Bold" size="15.0" />
               </font>
           </RadioButton>
-          <RadioButton id="power" fx:id="powerRadioButton" onAction="#handleRadioButtonAction" styleClass="radioBackground" stylesheets="@style.css" text="Powers" textFill="#ffe205" GridPane.columnIndex="2">
+          <RadioButton id="power" fx:id="powerRadioButton" onAction="#handleRadioButtonAction" styleClass="radioBackground" stylesheets="@../css/style.css" text="Powers" textFill="#ffe205" GridPane.columnIndex="2">
               <font>
                   <Font name="Arial Bold" size="15.0" />
               </font>
@@ -82,7 +82,7 @@
          <Insets bottom="6.0" left="6.0" right="10.0" top="6.0" />
       </padding>
    </GridPane>
-   <PieChart fx:id="pieChart" labelLineLength="25.0" legendSide="RIGHT" maxHeight="1.7976931348623157E308" prefHeight="500.0" prefWidth="900.0" styleClass="pieChart" stylesheets="@style.css">
+   <PieChart fx:id="pieChart" labelLineLength="25.0" legendSide="RIGHT" maxHeight="1.7976931348623157E308" prefHeight="500.0" prefWidth="900.0" styleClass="pieChart" stylesheets="@../css/style.css">
       <VBox.margin>
          <Insets bottom="40.0" left="50.0" right="50.0" />
       </VBox.margin>

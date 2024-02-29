@@ -14,8 +14,8 @@ import java.net.URL;
 public class BasedController {
 
     public final String TABLE_PATH = "src/main/resources/org/assignment1/app/tableView.fxml";
-    public final String MOVIE_PATH = "src/main/resources/org/assignment1/app/MovieView.fxml";
-    public final String CHARACTER_PATH = "src/main/resources/org/assignment1/app/characteristicsView.fxml";
+    public final String MOVIE_PATH = "src/main/resources/org/assignment1/app/view/MovieView.fxml";
+    public final String CHARACTER_PATH = "src/main/resources/org/assignment1/app/view/characteristicsView.fxml";
 
     /* SWITCHES TO A DIFFERENT SCENE BASED ON THE FXML FILE NAME */
     public void switchSC(String fxmlFileName, ActionEvent actionEvent) throws IOException {
