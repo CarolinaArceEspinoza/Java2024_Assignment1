@@ -3,13 +3,9 @@ package org.example.assignment1.controller;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 import org.example.assignment1.model.Characters;
 import org.example.assignment1.model.DatabaseConnector;
 import org.example.assignment1.utils.Utils;
@@ -17,7 +13,7 @@ import org.example.assignment1.utils.Utils;
 import java.io.IOException;
 
 /* CONTROLLER CLASS TO MANAGES THE FUNCTIONALITY OF characteristicsView.fxml */
-public class tableViewController {
+public class TableViewController extends BasedController {
 
     @FXML
     DatabaseConnector dbConnector = new DatabaseConnector(); //connection to database
@@ -66,21 +62,5 @@ public class tableViewController {
         ObservableList<Characters> items = characters.getCharactersFromDatabase(); // Retrieve data from the database
         this.containerTable.setItems(items);
 
-    }
-
-    /* NAVIGATION BAR OPTIONS */
-    public void tableViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'tableView.fxml'
-        Utils.switchSC(Utils.TABLE_PATH, actionEvent);
-    }
-
-    public void movieViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'MovieView.fxml'
-        Utils.switchSC(Utils.MOVIE_PATH, actionEvent);
-    }
-
-    public void kindViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'characteristicsView.fxml'
-        Utils.switchSC(Utils.CHARACTER_PATH, actionEvent);
     }
 }

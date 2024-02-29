@@ -2,14 +2,10 @@ package org.example.assignment1.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
 import org.example.assignment1.model.DatabaseConnector;
 import org.example.assignment1.utils.Utils;
 
@@ -22,7 +18,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /* CONTROLLER CLASS TO MANAGES THE FUNCTIONALITY OF characteristicsView.fxml */
-public class characteristicsViewController implements Initializable {
+public class CharacteristicsViewController extends BasedController implements Initializable {
 
     @FXML
     private PieChart pieChart; // Pie chart object for data visualization
@@ -88,21 +84,6 @@ public class characteristicsViewController implements Initializable {
         if (selectedRadioButton.isSelected()) {
             loadChartDataFromDatabase(selectedRadioButton.getId()); // Load data based on the selected radio button's ID
         }
-    }
-    /* NAVIGATION BAR OPTIONS */
-    public void tableViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'tableView.fxml'
-        Utils.switchSC(Utils.TABLE_PATH, actionEvent);
-    }
-
-    public void movieViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'MovieView.fxml'
-        Utils.switchSC(Utils.MOVIE_PATH, actionEvent);
-    }
-
-    public void kindViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'characteristicsView.fxml'
-        Utils.switchSC(Utils.CHARACTER_PATH, actionEvent);
     }
 
 }

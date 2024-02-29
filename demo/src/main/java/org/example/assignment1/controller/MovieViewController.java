@@ -24,7 +24,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /* CONTROLLER CLASS TO MANAGES THE FUNCTIONALITY OF MovieView.fxml */
-public class MovieViewController implements Initializable {
+public class MovieViewController extends BasedController implements Initializable {
     @FXML
     private BarChart<String, Number> barChart; // Bar chart for data visualization
 
@@ -100,20 +100,5 @@ public class MovieViewController implements Initializable {
         // Action is handled dynamically by the change listener attached to the toggle group
     }
 
-    /* NAVIGATION BAR OPTIONS */
-    public void tableViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'tableView.fxml'
-        Utils.switchSC(Utils.TABLE_PATH, actionEvent);
-    }
-
-    public void movieViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'MovieView.fxml'
-        Utils.switchSC(Utils.MOVIE_PATH, actionEvent);
-    }
-
-    public void kindViewButton(ActionEvent actionEvent) throws IOException {
-        // Switch to 'characteristicsView.fxml'
-        Utils.switchSC(Utils.CHARACTER_PATH, actionEvent);
-    }
 
 }
