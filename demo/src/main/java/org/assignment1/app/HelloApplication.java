@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tableView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),1300, 700);
-        Image image = new Image("file:src/main/resources/org/images/icon.png");
+        Image image = new Image("file:src/main/resources/org/assignment1/app/images/icon.png");
         stage.getIcons().add(image);
         stage.setTitle("Most Popular Marvel Characters");
         stage.setScene(scene);
