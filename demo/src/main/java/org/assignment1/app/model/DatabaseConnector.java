@@ -6,24 +6,20 @@ import java.sql.SQLException;
 
 public class DatabaseConnector {
 
-    /* CONNECTION TO ONLINE DATABASE
-    private static final String URL = "jdbc:mysql://sql5.freesqldatabase.com:3306/sql5686381";
-    private static final String USER = "sql5686381";
-    private static final String PASS = "8GPctZkUNr";
-    public Connection connect() { try {
-        return DriverManager.getConnection(URL, USER, PASS); } catch (SQLException e) {
-        throw new RuntimeException("Error connecting to the database", e); }
-    }
-}*/
+    private static final String URL = "jdbc:sqlserver://assignmentsjava.database.windows.net:1433;"
+            + "database=caroarce_marvelCharacters;"
+            + "user=CaroArceJava@assignmentsjava;"
+            + "password=Caro12345678_;"
+            + "encrypt=true;"
+            + "trustServerCertificate=false;"
+            + "hostNameInCertificate=*.database.windows.net;"
+            + "loginTimeout=30;";
 
-
-    /* CONNECTION TO LOCAL DATABASE*/
-
-    private static final String URL = "jdbc:mysql://localhost:3305/caroarce_marvelCharacters";
-    private static final String USER = "root";
-    private static final String PASS = "";
-    public Connection connect() { try {
-        return DriverManager.getConnection(URL, USER, PASS); } catch (SQLException e) {
-        throw new RuntimeException("Error connecting to the database", e); }
+    public Connection connect() {
+        try {
+            return DriverManager.getConnection(URL);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error connecting to the database", e);
+        }
     }
 }
