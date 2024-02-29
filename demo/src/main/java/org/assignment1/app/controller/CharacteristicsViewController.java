@@ -1,4 +1,4 @@
-package org.example.assignment1.controller;
+package org.assignment1.app.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,9 +6,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import org.example.assignment1.model.DatabaseConnector;
+import org.assignment1.app.model.DatabaseConnector;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

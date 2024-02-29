@@ -1,15 +1,12 @@
-package org.example.assignment1.controller;
+package org.assignment1.app.controller;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.example.assignment1.model.Characters;
-import org.example.assignment1.model.DatabaseConnector;
-
-import java.io.IOException;
+import org.assignment1.app.model.Characters;
+import org.assignment1.app.model.DatabaseConnector;
 
 /* CONTROLLER CLASS TO MANAGES THE FUNCTIONALITY OF characteristicsView.fxml */
 public class TableViewController extends BasedController {

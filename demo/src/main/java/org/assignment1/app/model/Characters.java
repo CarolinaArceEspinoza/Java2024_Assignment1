@@ -1,4 +1,4 @@
-package org.example.assignment1.model;
+package org.assignment1.app.model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

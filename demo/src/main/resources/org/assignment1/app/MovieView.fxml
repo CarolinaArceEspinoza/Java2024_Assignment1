@@ -19,7 +19,7 @@
 <!-- VISUAL STRUCTURE -->
 <!-- END VISUAL STRUCTURE -->
 
-<VBox fx:id="powerViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.assignment1.controller.MovieViewController">
+<VBox fx:id="powerViewContainter" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="20.0" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.assignment1.app.controller.MovieViewController">
     <!-- HEADER -->
 
     <!-- TITLE -->
