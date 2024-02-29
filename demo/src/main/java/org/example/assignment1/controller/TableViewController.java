@@ -8,7 +8,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.assignment1.model.Characters;
 import org.example.assignment1.model.DatabaseConnector;
-import org.example.assignment1.utils.Utils;
 
 import java.io.IOException;
 

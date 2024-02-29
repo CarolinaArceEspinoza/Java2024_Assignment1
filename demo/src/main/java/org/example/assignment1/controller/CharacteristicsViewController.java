@@ -7,7 +7,6 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import org.example.assignment1.model.DatabaseConnector;
-import org.example.assignment1.utils.Utils;
 
 import java.io.IOException;
 import java.net.URL;
