@@ -1,4 +1,4 @@
-package org.example.assignment1;
+package org.example.assignment1.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +12,8 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import org.example.assignment1.model.DatabaseConnector;
+import org.example.assignment1.utils.Utils;
 
 import java.io.IOException;
 import java.net.URL;
@@ -101,26 +103,17 @@ public class MovieViewController implements Initializable {
     /* NAVIGATION BAR OPTIONS */
     public void tableViewButton(ActionEvent actionEvent) throws IOException {
         // Switch to 'tableView.fxml'
-        switchScene("tableView.fxml", actionEvent);
+        Utils.switchSC(Utils.TABLE_PATH, actionEvent);
     }
 
     public void movieViewButton(ActionEvent actionEvent) throws IOException {
         // Switch to 'MovieView.fxml'
-        switchScene("MovieView.fxml", actionEvent);
+        Utils.switchSC(Utils.MOVIE_PATH, actionEvent);
     }
 
     public void kindViewButton(ActionEvent actionEvent) throws IOException {
         // Switch to 'characteristicsView.fxml'
-        switchScene("characteristicsView.fxml", actionEvent);
-    }
-
-    /* SWITCHES TO A DIFFERENT SCENE BASED ON THE FXML FILE NAME */
-    private void switchScene(String fxmlFileName, ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFileName));
-        Scene scene = new Scene(fxmlLoader.load(),1300, 700);
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        Utils.switchSC(Utils.CHARACTER_PATH, actionEvent);
     }
 
 }

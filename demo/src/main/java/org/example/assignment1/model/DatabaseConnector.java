@@ -1,4 +1,4 @@
-package org.example.assignment1;
+package org.example.assignment1.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
