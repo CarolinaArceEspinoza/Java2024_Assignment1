@@ -1,4 +1,4 @@
-package org.example.demo;
+package org.example.assignment1;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
